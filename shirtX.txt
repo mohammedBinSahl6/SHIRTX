@@ -1,0 +1,26 @@
+colors :
+
+----
+#e5446d
+#f8f4e3
+#706c61
+#2a2b2a
+
+SHIRTX
+
+
+
+شركة صغيرة بتطبع ملابس و بتبيعها على متجرها الالكتروني
+
+
+pages
+
+home 
+about 
+store
+cart
+faq
+
+
+header
+footer
