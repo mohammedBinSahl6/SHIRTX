@@ -4,3 +4,22 @@
     --c3 : #f8f4e3;
     --c4 : #706c61;
 }
+
+nav{
+    border-bottom: 1px solid;
+}
+
+.f-holder{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-land{
+    width: 50%;
+    z-index: -2;
+}
+.land{
+    width: 100%;
+    height: 100vh;
+}
