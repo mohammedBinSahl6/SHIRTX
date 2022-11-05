@@ -33,3 +33,8 @@ nav{
     color: #e5446d;
 }
 
+.active{
+    color: black;
+    border-bottom: 1px solid var(--c);
+}
+
