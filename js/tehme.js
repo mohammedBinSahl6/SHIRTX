@@ -1,5 +1,5 @@
 const swe = document.querySelector('#switch'),
-lab = body.q('#SwitchCheck');
+lab = body.querySelector('#SwitchCheck');
 
 // swe.addEventListener("click" , () => {
 // lab.classList.toggle('close');
