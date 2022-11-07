@@ -73,5 +73,19 @@ nav{
 .card{
     border: 1px solid var(--c);
     box-shadow: 5px 5px 12px var(--c);
-    
+    overflow: hidden !important;
+
+}
+
+.cart-btn i{
+    font-size: 5vh;
+}
+
+.card-img-top:hover{
+    transform: scale(1.2) !important;
+    transition: 0.5s;
+}
+.card-body{
+    z-index: 2 !important;
+    background-color: white !important;
 }
