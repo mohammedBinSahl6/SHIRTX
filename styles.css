@@ -89,3 +89,7 @@ nav{
     z-index: 2 !important;
     background-color: white !important;
 }
+
+.imgs{
+    width: 33vh;
+}
