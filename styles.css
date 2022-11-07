@@ -90,6 +90,13 @@ nav{
     background-color: white !important;
 }
 
-.imgs{
-    width: 33vh;
+/* /////////////////////about page ========================== */
+.carousel-inner{
+    background-color: var(--c4);
+}
+
+.personal-img{
+    width: 20vh;
+    height: 20vh;
+    border-radius: 100%;
 }
