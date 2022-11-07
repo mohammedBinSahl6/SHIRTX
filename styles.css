@@ -101,7 +101,7 @@ nav{
     border-radius: 100%;
 }
 
-sidebar header .toggle{
+.sidebar header .toggle{
     position: absolute;
     top: 50%;
     right: -25px;
