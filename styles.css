@@ -154,3 +154,36 @@ footer ul a{
     color: white;
     font-size: 4vh;
 }
+
+#par1{
+    background-color: white;
+}
+.img-2022{
+    width: 100%;
+}
+
+#par2{
+    background-color: var(--c4);
+}
+
+#par3{
+    background-color: white;
+}
+
+.comment-bar i{
+    font-size: 4vh;
+}
+#comments{
+    margin-top: 8em !important;
+}
+.add-comment-bar{
+    display: flex;
+    background-color: white;
+    border-top: 2px solid var(--c);
+    width: 100%;
+
+}
+
+.add-comment-bar i{
+    font-size: 9vh;
+}

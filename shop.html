@@ -17,10 +17,11 @@
 
         
 <nav class="navbar navbar-expand-sm navbar-light fixed-top">
-    <a class="navbar-brand" href="index.html">
-        <img class="logo" width="90" src="./imgs/LOGO.png">
-    </a>
+    
     <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+            <img class="logo" width="90" src="./imgs/LOGO.png">
+        </a>
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
             <i class='bx bx-menu-alt-right'></i>
         </button> 
@@ -34,6 +35,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " href="comments.html">Comments</a>
               </li>
             </ul>
            
@@ -55,7 +59,7 @@
                     <h3 class="card-title">T-SHIRT PLAZMA</h3>
                     <div class="card-text price">$<span class="price-val">25</span></div>
                     <div class="btns-bar">
-                        <button class="btn add-to-cart-btn px-3" >ADD TO CART</button>
+                        <button class="btn add-to-cart-btn px-3" onclick="product.addP(product.name)">ADD TO CART</button>
                         <button class="btn like px-3">
                             <i class='bx bx-heart-circle '></i>
                         </button>
@@ -70,7 +74,7 @@
                     <h3 class="card-title">T-SHIRT PLAZMA</h3>
                     <div class="card-text price">$<span class="price-val">25</span></div>
                     <div class="btns-bar">
-                        <button class="btn add-to-cart-btn px-3">ADD TO CART</button>
+                        <button class="btn add-to-cart-btn px-3" onclick="product2.addP(product2.name)">ADD TO CART</button>
                         <button class="btn like px-3">
                             <i class='bx bx-heart-circle '></i>
                         </button>
