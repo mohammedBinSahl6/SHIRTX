@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHIRTX | Home</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="imgs/LOGO.png">
+    <link rel="stylesheet" href="dark.css">
+    <link rel="icon" href="./imgs/LOsO.png">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -16,26 +17,42 @@
 <body>
     
 <nav class="navbar navbar-expand-sm navbar-light fixed-top">
-    <a class="navbar-brand" href="index.html">
+    
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">
         <img class="logo" width="90" src="./imgs/LOGO.png">
     </a>
-    <div class="container-fluid">
         <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
             <i class='bx bx-menu-alt-right'></i>
         </button> 
         <div class="collapse navbar-collapse" id="nav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="shop.html">Store</a>
+                <a class="nav-link" href="#">About</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="contact.html">Contact</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link " href="comments.html">Comments</a>
+              </li>
             </ul>
           </div>
+
+          <li class="mode">
+            <div class="sun-moon">
+                <i class='bx bx-moon icon moon'></i>
+                <i class='bx bx-sun icon sun'></i>
+            </div>
+            <span class="mode-text text">Dark mode</span>
+
+            <div class="toggle-switch">
+                <span class="switch"></span>
+            </div>
+        </li>
+        
+        </ul>
+      </div>
 
     </div>
   
@@ -45,7 +62,7 @@
 
 <div class="land " >
   <div class="f-holder">
-    <img src="imgs/LOGO.png" class="logo-land">
+    <img src="./imgs/LOGO.png" class="logo-land">
     <div class="row">
         
         <div class="row">
@@ -71,11 +88,11 @@
   </div>
 
   <div class="row ">
-    <div class="col-sm-6">
+    <div class="col-sm-6 p-5">
         <h4 class=" display-4 text-center">The Quality</h4>
         <img src="imgs/cotton.jpg" class="img-thumbnail">
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6 p-5">
       <p class="p-5">      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam incidunt accusantium voluptate soluta expedita quia dolor tempora nam, doloremque quas dolore maxime numquam est eaque deserunt obcaecati, alias ex nesciunt!
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui est numquam a deleniti aspernatur quisquam! Ex, harum commodi modi officia quaerat assumenda doloremque libero, maiores animi laboriosam quas facilis nisi?
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro cumque similique rerum. Praesentium, quidem. Quos, nulla tempora. Dolores nihil reprehenderit mollitia aliquid omnis, dolorum, veniam rem, unde animi ipsam corporis?
@@ -84,35 +101,66 @@
   </div>
 
 </div>
+<div class="container-fluid pt-5" id="par1">
+  <div class="row">
+    <div class="col-sm-6 p-5">
+      <img src="./imgs/perfect.jpg" class="img-thumbnail" data-aos="zoom-in-up">
+    </div>
+    <div class="col-sm-6 p-5" data-aos="zoom-in-up">
+      <h2 class="text-center">With Perfect Size</h2>
+      <p class="text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde quibusdam tenetur inventore? Ratione nihil suscipit eius quod? Dicta dolorem porro vitae, labore ab, alias explicabo rem soluta atque possimus veniam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe eius quis quod, porro officiis ratione qui dignissimos quas cumque tempore est facilis ad aliquam eos dolore perferendis libero dolor quasi!
+      </p>
 
-<footer class="footer mt-5">
-  <div class="row">
-      <div class="col">
-          <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="shop.html">Store</a></li>
-              <li>
-                <div class="form-check form-switch" id="switch">
-                  <input class="form-check-input" type="checkbox" role="switch" id="SwitchCheck">
-                  <label class="form-check-label" for="flexSwitchCheckDefault">Dark Mode</label>
-                </div>
-              </li>
-              
-              
-          </ul>
-          
+      <div class="mt-4 p-5 bg-dark text-white" data-aos="zoom-in-right">
+        <h2> % Get offer on XXXL Sizes</h2>
+        <p>Now ! we will give a big offer suits you for XXXL sizes</p>
+        <a class="btn btn-light" href="shop.html">Check The Store</a>
       </div>
-      <div class="col">
-          <h1 class="text-center">SHIRTX</h1>
-         
+      <div class="mt-4 p-5 bg-primary text-white" data-aos="zoom-in-left">
+        <h2>Do you have any comments ?</h2>
+        <p>You can give us your feedback !</p>
+        <a class="btn btn-dark" href="comments.html">Here</a>
       </div>
+    </div>
   </div>
+</div>
+
+<div class="container-fluid pt-5 text-white" id="par2">
   <div class="row">
-      <h3 class="text-center">@made By mohammed bin sahl and osman ahmed 2022</h3>
+    <div class="col-sm-8 p-5">
+      <img src="./imgs/2022.jpg" class="img-2022" data-aos="zoom-in-up">
+    </div>
+    <div class="col-sm-4 p-5" data-aos="zoom-in-up">
+      <h1 class="text-center">Brands 2022 !</h1>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, similique inventore expedita quia doloribus eos a repellendus iusto doloremque impedit quas est minima architecto, facilis soluta quisquam quaerat, molestiae maxime?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi officia dolores iste explicabo. Vitae provident molestiae laboriosam, dolorum blanditiis ipsa, unde optio, sed sapiente fugit suscipit ullam temporibus facere aperiam!Lorem
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, aperiam, hic autem nisi amet obcaecati, blanditiis mollitia fuga nostrum rem esse numquam ducimus! Beatae cumque ullam eligendi modi. Qui, voluptates!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga ipsa expedita porro aut temporibus vero ullam neque in, vitae magnam beatae error deleniti dicta. Eligendi, deleniti eum! Ipsam, obcaecati officia?
+
+      </p>
+    </div>
   </div>
-</footer>
+</div>
+
+<div class="container-fluid pt-5" id="par3">
+  <div class="row">
+    <div class="col-sm-6 p-5" data-aos="zoom-in-up">
+      <h1 class="text-center">With us ! Be confedient</h1>
+      <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis magni enim nulla laudantium commodi? Ipsa, distinctio labore itaque expedita quos, officiis enim consequuntur quibusdam animi quaerat quisquam veniam maiores ipsam?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure velit sint numquam et excepturi, ex dignissimos dolor provident exercitationem ipsum aut deleniti placeat obcaecati, quo eveniet ab neque. Quae, ab?
+
+      </p>
+    </div>
+    <div class="col-sm-6 p-5">
+      <img src="./imgs/confdent.webp" class="img-thumbnail" data-aos="zoom-in-up">
+    </div>
+  </div>
+</div>
+
+
+
+
 
 
     <script src="js/tehme.js"></script>
@@ -120,6 +168,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 	<script>
   AOS.init();
-</script>
+</script> 
 </body>
 </html>
