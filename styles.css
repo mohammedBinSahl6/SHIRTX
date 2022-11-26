@@ -187,3 +187,7 @@ footer ul a{
 .add-comment-bar i{
     font-size: 9vh;
 }
+
+.mesaages{
+    border-right: 1px solid;
+}
