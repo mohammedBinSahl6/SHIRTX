@@ -1,20 +1,61 @@
-const swe = document.querySelector('#switch'),
-lab = body.querySelector('#SwitchCheck');
 
-// swe.addEventListener("click" , () => {
-// lab.classList.toggle('close');
-// })
+
+const body = document.querySelector('body'),
+navbar = body.querySelector('nav')
+toggle = body.querySelector('.toggle'),
+modeswi = body.querySelector('.toggle-switch'),
+modetxt = body.querySelector(".mode-text"),
+htitle = body.querySelector('.display-1'),
+lan = body.querySelector('.land'),
+prg = body.querySelector('.des'),
+logo = body.querySelector('.logo-land');
+
+
+
+
+modeswi.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+
 
 if(body.classList.contains("dark")){
-    swe.innerText = "white";
-  }else{
-    swe.innerText = "black";
-    
-  }
-
-
-  if(body.classList.contains("dark")){
-    lab.style.color = 'white'
+    modetxt.innerText = "Ligth mode";
 }else{
-    lab.style.color = 'black'
+    modetxt.innerText = "Dark mode";
 }
+
+if(body.classList.contains("dark")){
+    htitle.style.color = '#706c61'
+}else{
+    htitle.style.color = '#e5446d'
+}
+
+if(body.classList.contains("dark")){
+    lan.style.background ='#f8f4e3'
+}else{
+    lan.style.background = '#706c61'
+}
+
+if(body.classList.contains("dark")){
+    prg.style.color = '#706c61'
+}else{
+    prg.style.color = '#e5446d'
+}
+
+if(body.classList.contains('dark')){
+    logo.style.width = '50%'
+    logo.style.index ='-2'
+    logo.style.position = 'fixed'
+    logo.style.top = '10%' 
+}else{
+    logo.style.width = '50%'
+    logo.style.index = '-2'
+    logo.style.position = 'fixed'
+    logo.style.top = '10%'
+}
+
+if(body.classList.contains('dark')){
+    // navbar.style.background = '#f854e3'
+}else{
+    // navbar.style.background = '#2a2b2a'
+}
+});
