@@ -21,12 +21,13 @@ function App() {
   const [nameMsg , setNameMsg] = useState('');
   const [msgContent , setmsgContent] = useState('');
   const [emailMsg , setMsgEmail] = useState('');
+
   const msgCol = collection(db , 'messages')
   useEffect(()=>{
     const getMessages = async ()=>{
        const data =await getDocs(msgCol)
        setMessages(data.docs.map((doc)=>(
-        {...doc.data , id : doc.id}
+        {...doc.data() , id : doc.id}
        )))
     }
 
@@ -42,8 +43,13 @@ function App() {
     await addDoc(msgCol , {
       name : nameMsg,
       content : msgContent,
-      email : emailMsg
+      email : emailMsg,
+      
     })
+    setMsgEmail('')
+    setNameMsg('')
+    setmsgContent('')
+    alert('The message has been sent successfully !')
   }
   
   
@@ -53,11 +59,11 @@ function App() {
       <Routes>
         <Route path='/' element={ <Homepage />} />
         <Route path='/about' element={ <About />} />
-        <Route path='/contact' element={ <Contact nv={nameMsg} ev={emailMsg} cv={msgContent} nMsg={nameOnChangeMsg} cMsg={msgContentonChange} eMsg={setMsgEmail} createMessage={createMessage} />} />
+        <Route path='/contact' element={ <Contact nv={nameMsg} ev={emailMsg} cv={msgContent} nMsg={nameOnChangeMsg} cMsg={msgContentonChange} eMsg={emailMsgOnChange} createMessage={createMessage} />} />
         <Route path='/comments' element={ <Comments />} />
         <Route path='/Shop' element={ <Shop />} />
         <Route path='/Faq' element={ <Faq />} />
-        <Route path='/dash12345' element={ <Dashboard messages={messages} />} />
+        <Route path='/dash12345' element={ <Dashboard messages={messages}  />} />
       </Routes>
  <Footer />
  
