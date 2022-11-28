@@ -1,0 +1,97 @@
+:root{
+  --c :#e5446d;
+  --c2 : #2a2b2a;
+  --c3 : #f8f4e3;
+  --c4 : #706c61;
+}
+.shop-now-btn{
+    transition: 0.5s !important;
+}
+
+.main-title {
+    text-transform: uppercase;
+    margin: 0 auto 80px;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 2;
+    transition:0.3s;
+    width: 50% !important;
+  
+  }
+  .main-title::before,
+  .main-title::after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color:var(--c);
+    
+    position: absolute;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .main-title::before {
+    left: -30px;
+  }
+  .main-title::after {
+    right: -30px;
+  }
+  .main-title:hover::before {
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+  }
+  .main-title:hover::after {
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+  }
+  .main-title:hover {
+    color: black;
+    border: 2px solid var(--c);
+    transition-delay: 0.5s;
+  }
+
+  @keyframes left-move {
+    50% {
+      left: 0;
+      width: 12px;
+      height: 12px;
+    }
+    100% {
+      left: 0;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  @keyframes right-move {
+    50% {
+      right: 0;
+      width: 12px;
+      height: 12px;
+    }
+    100% {
+      right: 0;
+      border-radius: 0;
+      width: 50%;
+      height: 100%;
+    }
+  }
+  @keyframes moving-arrow {
+    100% {
+      transform: translateX(10px);
+    }
+  }
+  @keyframes flashing {
+    0%,
+    40% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      width: 200%;
+      height: 200%;
+    }
+  }
