@@ -1,4 +1,4 @@
-export default function Contact(){
+export default function Contact({nMsg,cMsg,eMsg,createMessage,ev,cv,nv}){
     return(
         <>
         <div className="container forma">
@@ -7,20 +7,20 @@ export default function Contact(){
     </div>
     <div className="f-holder">
         <div className="card">
-            <form >
+            <form onSubmit={createMessage} >
                 <div className="mt-3 mb-3">
                     <label for="name" className="form-label">Name</label>
-                    <input type="text"  id="name" className="form-control" />
+                    <input type="text"  id="name" className="form-control" value={nv}  onChange={nMsg} />
                 </div>
                 <div className="mt-3 mb-3">
                     <label for="email" className="form-label">Email</label>
-                    <input type="email"  id="email" className="form-control" />
+                    <input type="email"  id="email" className="form-control" onChange={eMsg} value={ev} />
                 </div>
                 <div className="mt-3 mb-3">
                     <label for="msg" className="form-label">Message</label>
-                    <textarea type="text"  id="msg" className="form-control" rows="5"></textarea>
+                    <textarea value={cv} type="text"  id="msg" className="form-control" rows="5" onChange={cMsg}></textarea>
                 </div>
-                <button className="btn btn-outline-primary m-3">Send</button>
+                <button className="btn btn-outline-primary m-3" type="submit">Send</button>
             </form>
         </div>
     </div>
