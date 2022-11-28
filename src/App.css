@@ -10,6 +10,10 @@ nav{
   background-color: rgba(255, 255, 255, 0.521);
 }
 
+.starter{
+  margin-top: 8em !important;
+}
+
 .f-holder{
   display: flex !important;
   justify-content: center;
@@ -33,9 +37,9 @@ nav{
   color: #e5446d;
 }
 
-.active{
+.navbar__link--active{
   color: black;
-  border-bottom: 1px solid var(--c);
+  text-decoration: underline var(--c);
 }
 
 #about-store{
