@@ -1,4 +1,4 @@
-import './App.css';
+npm startimport './App.css';
 import './styles2.css';
 import Navbar from './components/Navbar';
 import Homepage from './components/Homepage';
