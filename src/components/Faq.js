@@ -40,7 +40,7 @@ export default function Faq(){
       </div>
     </div>
   </section>
-        <div className="f-holder ml-27">
+        <div className="pic-faq f-holder">
   <img src={require("../imgs/faq-pic.png")} />
     </div>
 
