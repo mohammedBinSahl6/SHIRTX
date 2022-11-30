@@ -1,14 +1,14 @@
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore'
 const firebaseConfig = {
-    apiKey: "AIzaSyAuDhdPZmvnr5q70njH4vuGrQyNEEApzXA",
-    authDomain: "shirtx-80885.firebaseapp.com",
-    projectId: "shirtx-80885",
-    storageBucket: "shirtx-80885.appspot.com",
-    messagingSenderId: "563480838406",
-    appId: "1:563480838406:web:a8b673d01a1dbe4e3e1e87",
-    measurementId: "G-VKND1DR4D7"
-  };
+  apiKey: "AIzaSyB_GuFOCERSnSY2YoXDNJIpexm-EYGDdFM",
+  authDomain: "testable-93d1c.firebaseapp.com",
+  projectId: "testable-93d1c",
+  storageBucket: "testable-93d1c.appspot.com",
+  messagingSenderId: "741528807909",
+  appId: "1:741528807909:web:d1e5d82ec8d2bcd06aa70c",
+  measurementId: "G-VSVE74BTJM"
+};
   
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
