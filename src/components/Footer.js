@@ -85,13 +85,10 @@ export default function Footer(){
             <a href="shop.html" className="text-reset">Pricing</a>
           </p>
           <p>
-            <a href="#!" className="text-reset">Settings</a>
-          </p>
-          <p>
             <a href="contact.html" className="text-reset">Order</a>
           </p>
           <p>
-            <Link to='/faq' className="text-reset">Help</Link>
+            <Link to='/faq' className="text-reset">FAQ</Link>
           </p>
         </div>
 

@@ -85,7 +85,7 @@ export default function Homepage(){
   </div>
 </div>
 
-<div className="container-fluid pt-5" id="par3">
+<div className="down container-fluid pt-5" id="par3">
   <div className="row">
     <div className="col-lg-6 p-5" data-aos="zoom-in-up">
       <h1 className="text-center">With us ! Be confedient</h1>
@@ -98,9 +98,14 @@ export default function Homepage(){
       <img src={require("../imgs/confdent.webp")} className="img-thumbnail" data-aos="zoom-in-up" />
     </div>
   </div>
+
+<div class="subscribe">
+          <form>
+            <input type="email" placeholder="Enter Your Email" />
+            <input type="submit" value="Subscribe" />
+          </form>        
+          </div>       
 </div>
-        
-        
         </>
     )
 }
