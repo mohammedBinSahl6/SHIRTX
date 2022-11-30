@@ -34,12 +34,12 @@ export default function Comments(){
    }
  const addLike = async(com)=>{
     await updateDoc(doc(db, 'comments', com.id),{
-        like : setCoLike(coLike +1)
+        like : setCoLike(com.like + 1)
     })
  }
  const addDislike = async(com)=>{
     await updateDoc(doc(db, 'comments',com.id),{
-        dislike : setCoDislike(coDislike + 1)
+        dislike : setCoDislike(coDislike++)
     })
  }
    

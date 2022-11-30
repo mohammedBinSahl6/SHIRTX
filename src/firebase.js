@@ -1,13 +1,15 @@
 import { initializeApp } from "firebase/app";
-import {getFirestore} from 'firebase/firestore'
+
+//import {getDatabase} from 'firebase/database'
+import { getFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyB_GuFOCERSnSY2YoXDNJIpexm-EYGDdFM",
-  authDomain: "testable-93d1c.firebaseapp.com",
-  projectId: "testable-93d1c",
-  storageBucket: "testable-93d1c.appspot.com",
-  messagingSenderId: "741528807909",
-  appId: "1:741528807909:web:d1e5d82ec8d2bcd06aa70c",
-  measurementId: "G-VSVE74BTJM"
+  apiKey: "AIzaSyCOulSQV4loDN59YgV8io_a0E8Fm-rk3iE",
+  authDomain: "shirtx2.firebaseapp.com",
+  projectId: "shirtx2",
+  storageBucket: "shirtx2.appspot.com",
+  messagingSenderId: "406762511379",
+  appId: "1:406762511379:web:87178101612a70324673e6",
+  measurementId: "G-NQKG2FYGNP"
 };
 
   
