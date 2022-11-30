@@ -41,7 +41,7 @@ export default function Faq(){
     </div>
   </section>
         <div className="pic-faq f-holder">
-  <img src={require("../imgs/faq-pic.png")} />
+  <img src={require("../imgs/faq.png")} />
     </div>
 
     <section className="section-two">
@@ -94,7 +94,7 @@ export default function Faq(){
   
     
     <div className="form-outline mb-4">
-        <label className="form-label" for="form4Example3">Message</label>
+        <label className="form-label" for="form4Example3">questions</label>
       <textarea className="form-control" id="form4Example3" rows="4"></textarea>
     </div>
   
