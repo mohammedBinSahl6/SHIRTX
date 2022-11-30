@@ -1,4 +1,4 @@
-export default function Faq(){
+export default function Faq({fnv, fev, fq, createQuestion, cfn, cfe , cfq}){
     return(
         <div className="faq-body">
                
@@ -79,23 +79,23 @@ export default function Faq(){
   
 <div className="container">
     <h4 className=" text-center mb-4 pb-2  fw-bold">Still have any questions? Contact us to get your answer!</h4>
-  <form className="form-faq" >
+  <form className="form-faq"  onSubmit={createQuestion}>
     
     <div className="form-outline mb-10">
         <label className="form-label" for="form4Example1">Name</label>
-      <input type="text" id="form4Example1" className="form-control" />
+      <input type="text" id="form4Example1" className="form-control" value={fnv} onChange={cfn} />
     </div>
   
     
     <div className="form-outline mb-4">
         <label className="form-label" for="form4Example2">Email address</label>
-      <input type="email" id="form4Example2" className="form-control" />
+      <input type="email" id="form4Example2" className="form-control" value={fev} onChange={cfe} />
     </div>
   
     
     <div className="form-outline mb-4">
         <label className="form-label" for="form4Example3">questions</label>
-      <textarea className="form-control" id="form4Example3" rows="4"></textarea>
+      <textarea className="form-control" id="form4Example3" rows="4" value={fq} onChange={cfq}></textarea>
     </div>
   
     

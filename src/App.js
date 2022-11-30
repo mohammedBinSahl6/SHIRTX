@@ -21,8 +21,13 @@ function App() {
   const [nameMsg , setNameMsg] = useState('');
   const [msgContent , setmsgContent] = useState('');
   const [emailMsg , setMsgEmail] = useState('');
-
-  const msgCol = collection(db , 'messages')
+//states for faq questions
+const [faqQuestions , setfaqQuestions] = useState([]);
+const [faqName , setfaqName] = useState('');
+const [question , setQeustion] = useState('');
+const [faqEmail , setfaqEmail] = useState('');
+  const msgCol = collection(db , 'messages');
+  const faqqCol = collection(db , 'faqQuestions');
   useEffect(()=>{
     const getMessages = async ()=>{
        const data =await getDocs(msgCol)
@@ -30,14 +35,28 @@ function App() {
         {...doc.data() , id : doc.id}
        )))
     }
+    const getFaqQ = async ()=>{
+      const data = await getDocs(faqqCol)
+      setfaqQuestions(data.docs.map((doc)=>(
+        {...doc.data(), id : doc.id}
+      )))
+    }
 
-
+    getFaqQ()
     getMessages()
   })
+
+  //for contact
   const nameOnChangeMsg = (e) => setNameMsg(e.target.value)
   const msgContentonChange = (e) => setmsgContent(e.target.value)
   const emailMsgOnChange = (e) => setMsgEmail(e.target.value)
  
+  //for faq
+const faqnameChange = e => setfaqName(e.target.value)
+const faqemailChange = e => setfaqEmail(e.target.value)
+const faqQChange = e => setQeustion(e.target.value)
+
+  //events
   const createMessage = async (e)=>{
     e.preventDefault(e)
     await addDoc(msgCol , {
@@ -51,6 +70,19 @@ function App() {
     setmsgContent('')
     alert('The message has been sent successfully !')
   }
+
+  const createQuestion = async (e)=>{
+    e.preventDefault(e);
+    await addDoc(faqqCol, {
+      name : faqName,
+      email : faqEmail,
+      question : question
+    })
+    setQeustion('')
+    setfaqName('')
+    setfaqEmail('')
+    alert('your question has sent!')
+  };
   
   
   return (
@@ -62,8 +94,8 @@ function App() {
         <Route path='/contact' element={ <Contact nv={nameMsg} ev={emailMsg} cv={msgContent} nMsg={nameOnChangeMsg} cMsg={msgContentonChange} eMsg={emailMsgOnChange} createMessage={createMessage} />} />
         <Route path='/comments' element={ <Comments />} />
         <Route path='/Shop' element={ <Shop />} />
-        <Route path='/Faq' element={ <Faq />} />
-        <Route path='/dash12345' element={ <Dashboard messages={messages}  />} />
+        <Route path='/Faq' element={ <Faq fnv={faqName} fev={faqEmail} fq={question} createQuestion={createQuestion} cfn={faqnameChange} cfe={faqemailChange} cfq={faqQChange} />} />
+        <Route path='/dash12345' element={ <Dashboard messages={messages}  faqQuestions={faqQuestions} />} />
       </Routes>
  <Footer />
  
