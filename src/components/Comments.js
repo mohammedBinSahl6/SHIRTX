@@ -26,17 +26,14 @@ export default function Comments(){
    const createComment = async (e)=>{
     e.preventDefault(e);
     await addDoc(commentCol, {
+        ...doc.data(), 
         name: coName,
         comment : comment,
-        like : coLike,
+        
         dislike : coDislike
     })
    }
- const addLike = async(com)=>{
-    await updateDoc(doc(db, 'comments', com.id),{
-        like : setCoLike(com.like + 1)
-    })
- }
+
  const addDislike = async(com)=>{
     await updateDoc(doc(db, 'comments',com.id),{
         dislike : setCoDislike(coDislike++)
@@ -59,7 +56,7 @@ export default function Comments(){
                          <h1><i className='bx bxs-user-circle'></i> {comment.name}</h1>
                          <p>{comment.comment}</p>
                          <div className="comment-bar">
-                             <button className="btn" onClick={addLike}>{comment.like}<i className='bx bxs-like'></i></button>
+                             <button className="btn" onClick={()=>setCoLike(l => l + 1 )}>{comment.like}<i className='bx bxs-like'></i></button>
                              <button className="btn" onClick={addDislike}>{comment.dislike}<i className='bx bxs-dislike' ></i></button>
                          </div>
                      </div>
