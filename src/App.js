@@ -25,7 +25,7 @@ function App() {
   const msgCol = collection(db , 'messages')
   useEffect(()=>{
     const getMessages = async ()=>{
-       const data =await getDocs(msgCol).catch(console.log('server down'))
+       const data =await getDocs(msgCol)
        setMessages(data.docs.map((doc)=>(
         {...doc.data() , id : doc.id}
        )))

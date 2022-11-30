@@ -1,4 +1,48 @@
+import { addDoc, collection, doc, getDocs, updateDoc } from "firebase/firestore"
+import { useEffect, useState } from "react"
+import { db } from "../firebase"
+
 export default function Comments(){
+   const [comments, setComments] = useState([])
+   const [coName , setCoName] = useState('') 
+   const [comment , setComment] = useState('') 
+   const [coLike , setCoLike] = useState(0) 
+   const [coDislike, setCoDislike] = useState(0)
+   
+   const commentCol = collection(db , 'comments')
+
+   useEffect(()=>{
+   const getComments = async ()=>{
+    const data = await getDocs(commentCol)
+    setComments(data.docs.map((doc)=>(
+        {...doc.data() , id : doc.id}
+    )))
+   }
+
+   getComments()
+   })
+
+
+   const createComment = async (e)=>{
+    e.preventDefault(e);
+    await addDoc(commentCol, {
+        name: coName,
+        comment : comment,
+        like : coLike,
+        dislike : coDislike
+    })
+   }
+ const addLike = async(com)=>{
+    await updateDoc(doc(db, 'comments', com.id),{
+        like : setCoLike(coLike +1)
+    })
+ }
+ const addDislike = async(com)=>{
+    await updateDoc(doc(db, 'comments',com.id),{
+        dislike : setCoDislike(coDislike + 1)
+    })
+ }
+   
     return(
         <>
         
@@ -9,57 +53,34 @@ export default function Comments(){
         <div className="comments p-3 container-fluid">
             <div className="row">
                 <ul className="list-group">
-                    <li className="list-group-item">
-                        <div className="alert alert-primary comment">
-                            <h1><i className='bx bxs-user-circle'></i> John doe</h1>
-                            <p>Wow i love the Quality its amazing!</p>
-                            <div className="comment-bar">
-                                <button className="btn"><i className='bx bxs-like'></i></button>
-                                <button className="btn"><i className='bx bxs-dislike' ></i></button>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="list-group-item">
-                        <div className="alert alert-primary comment">
-                            <h1><i className='bx bxs-user-circle'></i> Mark wiss</h1>
-                            <p>i need some t-shirt with small size!!!</p>
-                            <div className="comment-bar">
-                                <button className="btn"><i className='bx bxs-like'></i></button>
-                                <button className="btn"><i className='bx bxs-dislike' ></i></button>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="list-group-item">
-                        <div className="alert alert-primary comment">
-                            <h1><i className='bx bxs-user-circle'></i> Mohammed dbs</h1>
-                            <p>I like this section</p>
-                            <div className="comment-bar">
-                                <button className="btn"><i className='bx bxs-like'></i></button>
-                                <button className="btn"><i className='bx bxs-dislike' ></i></button>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="list-group-item">
-                        <div className="alert alert-primary comment">
-                            <h1><i className='bx bxs-user-circle'></i> sara doe</h1>
-                            <p>it is an amazing shop!</p>
-                            <div className="comment-bar">
-                                <button className="btn"><i className='bx bxs-like'></i></button>
-                                <button className="btn"><i className='bx bxs-dislike' ></i></button>
-                            </div>
-                        </div>
-                    </li>
+                   {comments.map((comment ,index)=>( 
+                     <li className="list-group-item" key={index}>
+                     <div className="alert alert-primary comment">
+                         <h1><i className='bx bxs-user-circle'></i> {comment.name}</h1>
+                         <p>{comment.comment}</p>
+                         <div className="comment-bar">
+                             <button className="btn" onClick={addLike}>{comment.like}<i className='bx bxs-like'></i></button>
+                             <button className="btn" onClick={addDislike}>{comment.dislike}<i className='bx bxs-dislike' ></i></button>
+                         </div>
+                     </div>
+                 </li>
+                  ) )}
+                  
                 </ul>
             </div>
         </div>
     </div>
 
     <div className="container-fluid">
-        <div className="add-comment-bar fixed-bottom">
-            <input className="form-control" id="name" placeholder="Your name" />
-            <textarea className="form-control" id="comment" placeholder="Comment..." rows="1"></textarea>
+
+           <form onSubmit={createComment}>
+           <div className="add-comment-bar fixed-bottom">
+           <input className="form-control" id="name" placeholder="Your name" value={coName} onChange={e=>setCoName(e.target.value)} />
+            <textarea className="form-control" id="comment" placeholder="Comment..." rows="1" value={comment} onChange={e=>setComment(e.target.value)}></textarea>
             <button className="btn send-btn"><i className='bx bx-send'></i></button>
-        </div>
+           </div>
+           </form>
+        
     </div>
         
         
