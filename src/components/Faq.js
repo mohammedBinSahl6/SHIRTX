@@ -1,6 +1,6 @@
 export default function Faq(){
     return(
-        <>
+        <div className="faq-body">
                
 <section className="starter">
     <h3 className="text-center mb-4 pb-2  fw-bold">FAQ</h3>
@@ -10,7 +10,7 @@ export default function Faq(){
   
     <div className="row">
       <div className="col-md-6 col-lg-4 mb-4">
-        <h6 className="mb-3 text-primary"> A simple
+        <h6 className="mb-3 "> A simple
           question?</h6>
         <p>
           Absolutely! We work with top payment companies which guarantees
@@ -21,16 +21,16 @@ export default function Faq(){
       </div>
   
       <div className="col-md-6 col-lg-4 mb-4">
-        <h6 className="mb-3 text-primary"> A question
+        <h6 className="mb-3 "> A question
           that
           is longer then the previous one?</h6>
         <p>
-            You can return clothes at any time
+            You can return clothes at any time.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad repudiandae, odio maiores a corporis cumque commodi eligendi facere, enim amet consequatur, voluptatum perferendis necessitatibus totam fugit animi qui unde explicabo!
         </p>
       </div>
   
       <div className="col-md-6 col-lg-4 mb-4">
-        <h6 className="mb-3 text-primary"> A simple
+        <h6 className="mb-3 "> A simple
           question?
         </h6>
         <p>
@@ -38,9 +38,16 @@ export default function Faq(){
           account at any time with no further obligation.
         </p>
       </div>
-  
+    </div>
+  </section>
+        <div className="f-holder ml-27">
+  <img src={require("../imgs/faq-pic.png")} />
+    </div>
+
+    <section className="section-two">
+  <div className="row">
       <div className="col-md-6 col-lg-4 mb-4">
-        <h6 className="mb-3 text-primary"> A simple
+        <h6 className="mb-3 "> A simple
           question?
         </h6>
         <p>
@@ -49,7 +56,7 @@ export default function Faq(){
       </div>
   
       <div className="col-md-6 col-lg-4 mb-4">
-        <h6 className="mb-3 text-primary"> A simple
+        <h6 className="mb-3 "> A simple
           question?
         </h6>
         <p>Unfortunately no. We do not issue full or partial refunds for any
@@ -57,23 +64,22 @@ export default function Faq(){
       </div>
   
       <div className="col-md-6 col-lg-4 mb-4">
-        <h6 className="mb-3 text-primary"> Another
+        <h6 className="mb-3 "> Another
           question that is longer than usual</h6>
         <p>
           Of course! We’re happy to offer a free plan to anyone who wants to try our service.
         </p>
       </div>
-    </div>
-  </section>
-  
+      </div>
+    </section>
 
 <br />
 
 
   
 <div className="container">
-    <div className="text-center mb-4 pb-2 text-primary fw-bold">Still have any questions? Contact us to get your answer!</div>
-  <form >
+    <h4 className=" text-center mb-4 pb-2  fw-bold">Still have any questions? Contact us to get your answer!</h4>
+  <form className="form-faq" >
     
     <div className="form-outline mb-10">
         <label className="form-label" for="form4Example1">Name</label>
@@ -95,10 +101,10 @@ export default function Faq(){
     
   
    
-    <button type="submit" className="btn btn-primary btn-block mb-4">Send</button>
+    <button type="submit" className="btn  btn-block mb-4">Send</button>
   </form>
 </div>
 
-        </>
+        </div>
     )
 }
