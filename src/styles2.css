@@ -33,13 +33,13 @@
 
  .down .subscribe {
   width: 100%;
-  margin-top: 50px;
+  padding: 50px;
 }
 .down .subscribe form {
-  width: 600px;
-  margin: 20px auto;
-  padding: 30px 40px;
-  background-color: #f6f5f5;
+  width: 78vh;
+    margin: 20px auto;
+    padding: 18px 36px;
+  background-color:var(--c4);
   border-radius: 50px;
   display: flex;
   gap: 20px;
@@ -82,7 +82,7 @@
   font-weight: bold;
   padding: 20px;
   cursor: pointer;
-  transition: 0.3س;
+  transition: 0.3s;
 }
 @media (max-width: 767px) {
   .down .subscribe form input[type="submit"] {
@@ -90,8 +90,14 @@
   }
 }
 .down .subscribe form input[type="submit"]:hover {
-  background-color: var(--c4);
+  background-color: var(--c3);
+  color: var(--c4);
 }
+
+.subscribe-span{
+    padding-left: 25vh;
+}
+
 
 .section-two{
   margin: 5vh;
