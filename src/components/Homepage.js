@@ -98,7 +98,7 @@ export default function Homepage(){
       <img src={require("../imgs/confdent.webp")} className="img-thumbnail" data-aos="zoom-in-up" />
     </div>
   </div>
-
+   <span className="subscribe-span text-center text-dark display-5">subscribe With us and get offer 50%!!</span>
 <div class="subscribe">
           <form>
             <input type="email" placeholder="Enter Your Email" />
