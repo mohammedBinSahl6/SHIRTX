@@ -41,7 +41,7 @@ export default function Faq(){
     </div>
   </section>
         <div className="pic-faq f-holder">
-  <img src={require("../imgs/faq-pic.png")} />
+  <img src={require("../imgs/faq.png")} />
     </div>
 
     <section className="section-two">

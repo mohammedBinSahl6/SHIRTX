@@ -26,14 +26,13 @@
 }
 
 .pic-faq img{
-    width: 17vh;
-    height: 15vh;
+    width:22%;
+  
 }
 
 .section-two{
   margin: 5vh;
-    padding-top: 11vh
-}
+ }
 
 .main-title {
     text-transform: uppercase;
