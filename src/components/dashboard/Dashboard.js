@@ -28,6 +28,23 @@ export default function Dashboard({messages}){
                 <h4 className="text-center">Nothig yet here !</h4>
             </div>
         </div>
+        <div className="row my-5">
+            <div className="col-sm-6 p-5 faq-quistions">
+                <h2 className="text-center">FAQ Questions</h2>
+                <div className="alert alert-warning my-3">
+                    <h1>FAQ Question :</h1>
+                    <h3>Mohammed ali</h3>
+                    <h4>mohammed.mama@gmail.com</h4>
+                    <p>hello where is the shopping cart???</p>
+                </div>
+                <div className="alert alert-warning my-3">
+                    <h1>FAQ Question :</h1>
+                    <h3>Mohammed ali</h3>
+                    <h4>mohammed.mama@gmail.com</h4>
+                    <p>hello where is the shopping cart???</p>
+                </div>
+            </div>
+        </div>
     </div>
         
         </>
