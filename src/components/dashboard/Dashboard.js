@@ -1,4 +1,4 @@
-export default function Dashboard({messages , faqQuestions}){
+export default function Dashboard({messages , faqQuestions,subscribeEmails}){
     return(
 
         <>
@@ -40,6 +40,13 @@ export default function Dashboard({messages , faqQuestions}){
                 </div>
                 ))}
                
+            </div>
+            <div className="col-sm-6 p-5 semails">
+                <ul className="list-group">
+                    {subscribeEmails.map((semail, index)=>(
+                        <li className="list-group-item">{semail.email}</li>
+                    ))}
+                </ul>
             </div>
         </div>
     </div>

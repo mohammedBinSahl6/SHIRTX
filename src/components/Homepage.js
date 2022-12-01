@@ -1,4 +1,4 @@
-export default function Homepage(){
+export default function Homepage({addSemail,semailOnchange,Semail}){
     return(
         <>
         
@@ -100,8 +100,8 @@ export default function Homepage(){
   </div>
    <span className="subscribe-span text-center text-dark display-5">subscribe With us and get offer 50%!!</span>
 <div class="subscribe">
-          <form>
-            <input type="email" placeholder="Enter Your Email" />
+          <form onSubmit={addSemail}>
+            <input type="email" placeholder="Enter Your Email" value={Semail} onChange={semailOnchange}/>
             <input type="submit" value="Subscribe" />
           </form>        
           </div>       

@@ -15,6 +15,7 @@ import Dashboard from './components/dashboard/Dashboard';
 import { useEffect, useState } from 'react';
 import { addDoc, collection, getDocs } from '@firebase/firestore';
 import { db } from './firebase';
+import { async } from '@firebase/util';
 Aos.init()
 function App() {
   const [messages , setMessages] = useState([]);
@@ -28,6 +29,11 @@ const [question , setQeustion] = useState('');
 const [faqEmail , setfaqEmail] = useState('');
   const msgCol = collection(db , 'messages');
   const faqqCol = collection(db , 'faqQuestions');
+  const semailsCol = collection(db,'SubscribeEmails')
+
+  //states for subscribe emails
+  const [subscribeEmails,setsubscribeEmails ] = useState([])
+  const [Semail, setSemail] = useState('');
   useEffect(()=>{
     const getMessages = async ()=>{
        const data =await getDocs(msgCol)
@@ -40,11 +46,19 @@ const [faqEmail , setfaqEmail] = useState('');
       setfaqQuestions(data.docs.map((doc)=>(
         {...doc.data(), id : doc.id}
       )))
+    };
+    const getSemails = async ()=>{
+      const data = await getDocs(semailsCol)
+      setsubscribeEmails(data.docs.map((doc)=>(
+        {...doc.data(), id: doc.id}
+      )))
     }
-
+    getSemails()
     getFaqQ()
     getMessages()
   })
+  //for semails
+  const semailOnchange = (e)=>setSemail(e.target.value)
 
   //for contact
   const nameOnChangeMsg = (e) => setNameMsg(e.target.value)
@@ -83,19 +97,27 @@ const faqQChange = e => setQeustion(e.target.value)
     setfaqEmail('')
     alert('your question has sent!')
   };
+  const addSemail = async (e)=>{
+    e.preventDefault()
+    await addDoc(semailsCol,{
+      email: Semail
+    })
+    setSemail('')
+    alert('Your email has been added to subscribe offer ')
+  }
   
   
   return (
  <>
  <Navbar />
       <Routes>
-        <Route path='/' element={ <Homepage />} />
+        <Route path='/' element={ <Homepage semailOnchange={semailOnchange} addSemail={addSemail} Semail={Semail} />} />
         <Route path='/about' element={ <About />} />
         <Route path='/contact' element={ <Contact nv={nameMsg} ev={emailMsg} cv={msgContent} nMsg={nameOnChangeMsg} cMsg={msgContentonChange} eMsg={emailMsgOnChange} createMessage={createMessage} />} />
         <Route path='/comments' element={ <Comments />} />
         <Route path='/Shop' element={ <Shop />} />
         <Route path='/Faq' element={ <Faq fnv={faqName} fev={faqEmail} fq={question} createQuestion={createQuestion} cfn={faqnameChange} cfe={faqemailChange} cfq={faqQChange} />} />
-        <Route path='/dash12345' element={ <Dashboard messages={messages}  faqQuestions={faqQuestions} />} />
+        <Route path='/dash12345' element={ <Dashboard messages={messages}  faqQuestions={faqQuestions} subscribeEmails={subscribeEmails} />} />
       </Routes>
  <Footer />
  
